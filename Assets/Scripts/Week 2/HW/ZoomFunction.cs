@@ -29,6 +29,7 @@ public class ZoomFunction : MonoBehaviour
     }
 
     public void ZoomTool()
+        //this part of the function zooms out
     {
         if (CameraBG.transform.localScale != (Vector3.one))
         {
@@ -40,6 +41,8 @@ public class ZoomFunction : MonoBehaviour
 
                  }
         }
+
+        // this part of the function zooms in
 
         if (CameraBG.transform.localScale != (Vector3.one * 4))
         {

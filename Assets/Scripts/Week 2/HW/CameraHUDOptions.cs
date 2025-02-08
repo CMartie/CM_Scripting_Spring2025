@@ -27,11 +27,6 @@ public class CameraHUDOptions : MonoBehaviour
 
         CameraBG.transform.localScale = BGscale * 4;
 
-        
-
-       
-
-
        
 
     }
@@ -39,10 +34,6 @@ public class CameraHUDOptions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-        
-
        
         
             zoomController.ZoomTool();
