@@ -56,9 +56,9 @@ public class PlayScreenSelection : MonoBehaviour
 
 
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+       // if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Destroy(BlackScreen);
+            //Destroy(BlackScreen);
 
 
         }

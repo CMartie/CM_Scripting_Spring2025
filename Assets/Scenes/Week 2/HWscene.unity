@@ -244,6 +244,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76741254}
   m_CullTransparentMesh: 1
+--- !u!1 &339848707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339848709}
+  - component: {fileID: 339848708}
+  m_Layer: 0
+  m_Name: ZoomController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &339848708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339848707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042c5be1ac08d9e4ab354898c4243cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraBG: {fileID: 828031227}
+  ZoomSlider: {fileID: 893223075}
+  BGscale: {x: 1, y: 1, z: 1}
+  zoom: 0.5
+  ZoomOut: {x: -0.25, y: -0.25, z: -0.25}
+  SliderDown: {x: 0, y: -50, z: 0}
+--- !u!4 &339848709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339848707}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 472.60406, y: 193.47937, z: 447.22708}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &800805267
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,8 +599,7 @@ MonoBehaviour:
   ZoomSlider: {fileID: 893223075}
   Continue: {fileID: 65520339}
   BGscale: {x: 1, y: 1, z: 1}
-  Zoom: {x: 0, y: 0, z: 0}
-  zoomOut: 0
+  zoomController: {fileID: 339848708}
 --- !u!4 &1020488974
 Transform:
   m_ObjectHideFlags: 0
@@ -559,8 +608,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020488972}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1192.8849, y: 531.5228, z: -12.314829}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1192.8849, y: 531.5228, z: -12.314819}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1124,3 +1173,4 @@ SceneRoots:
   - {fileID: 1314607426}
   - {fileID: 65520340}
   - {fileID: 1020488974}
+  - {fileID: 339848709}
