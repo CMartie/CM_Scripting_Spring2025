@@ -13,6 +13,7 @@ public class CameraHUDOptions : MonoBehaviour
 
     public Vector3 BGscale;
 
+    public int count = 0;
 
     public ZoomFunction zoomController;
 

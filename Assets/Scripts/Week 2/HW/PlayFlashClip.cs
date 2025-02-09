@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.Video;
+
 
 public class PlayFlashClip : MonoBehaviour
 {
    // public VideoPlayer flashVideo;
-    public ShowGallery showVideo;
+   // public ShowGallery showVideo;
     public GameObject whiteScreen;
 
 
@@ -23,7 +23,8 @@ public class PlayFlashClip : MonoBehaviour
 
     public void playCameraShutter()
     {
-        showVideo.galleryBG = whiteScreen;
+        whiteScreen.SetActive(true);
+
     }
 
    /* public void PlayVideo()

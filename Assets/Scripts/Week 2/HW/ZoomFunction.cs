@@ -1,4 +1,5 @@
 
+using System.Threading;
 using UnityEngine;
 
 public class ZoomFunction : MonoBehaviour
@@ -14,6 +15,11 @@ public class ZoomFunction : MonoBehaviour
     public Vector3 ZoomOut;
 
     public Vector3 SliderDown;
+
+    public CameraHUDOptions HUD;
+
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,7 +47,10 @@ public class ZoomFunction : MonoBehaviour
 
             ZoomSlider.transform.localPosition += SliderDown;
 
-                 }
+                HUD.count += 1;
+                Debug.Log("zoomed" + HUD.count);
+
+            }
         }
 
         // this part of the function zooms in
@@ -53,9 +62,18 @@ public class ZoomFunction : MonoBehaviour
             CameraBG.transform.localScale += ZoomOut * -1;
 
             ZoomSlider.transform.localPosition += SliderDown * -1;
+                
+                HUD.count += 1;
+                Debug.Log("zoomed" + HUD.count);
 
               }
+
         }
+
+        
+
+
+        
           
     }
 
