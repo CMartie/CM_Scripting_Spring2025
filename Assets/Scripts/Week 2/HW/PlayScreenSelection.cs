@@ -1,6 +1,4 @@
-using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
 public class PlayScreenSelection : MonoBehaviour
 {
@@ -16,7 +14,7 @@ public class PlayScreenSelection : MonoBehaviour
 
     public GameObject ZoomSlider;
 
-    
+    public AudioQueue selection;
 
 
 
@@ -35,21 +33,30 @@ public class PlayScreenSelection : MonoBehaviour
 
         nextArea();
 
+     
 
     }
 
     private void PlayerScreenNavigation()
     {
+
         if (Input.GetKeyDown(KeyCode.S))
         {
+            selection.selectionNoise();
             PlayScreen.SetActive(false);
+            
+            
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
+           selection.selectionNoise();
             PlayScreen.SetActive(true);
+            
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            selection.heavyPlayNoise();
+
             BlackScreen.SetActive(true);
             Destroy(PlayScreen2);
             Destroy(PlayScreen);
