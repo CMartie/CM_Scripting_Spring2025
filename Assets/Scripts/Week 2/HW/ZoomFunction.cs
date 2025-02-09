@@ -9,7 +9,7 @@ public class ZoomFunction : MonoBehaviour
 
     public Vector3 BGscale;
 
-  
+    public PlayScreenSelection playDebug;
 
     public Vector3 ZoomOut;
 
@@ -18,7 +18,9 @@ public class ZoomFunction : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
+        
+        
     }
 
     // Update is called once per frame

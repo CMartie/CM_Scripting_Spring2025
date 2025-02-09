@@ -3,7 +3,11 @@ using UnityEngine.Video;
 
 public class PlayFlashClip : MonoBehaviour
 {
-    public VideoPlayer flashVideo;
+   // public VideoPlayer flashVideo;
+    public ShowGallery showVideo;
+    public GameObject whiteScreen;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,20 +18,24 @@ public class PlayFlashClip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Backspace))
-       // {
-      //      flashVideo.Play();
-      //  }
+       
     }
 
-    public void PlayVideo()
+    public void playCameraShutter()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            flashVideo.Play();
-        }
+        showVideo.galleryBG = whiteScreen;
+    }
+
+   /* public void PlayVideo()
+    {
+        
+        
+            
+        flashVideo.Play();
+        
 
     }
+   */
 }
 
 
