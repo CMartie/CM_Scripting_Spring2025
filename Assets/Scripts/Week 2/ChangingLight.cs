@@ -71,6 +71,39 @@ public class ChangingLight : MonoBehaviour
         lightWeWantToChange.color = color;
     }
 
+    public void newChangeLightColor()
+    {
+        if (lightWeWantToChange.color == Color.green)
+        {
+            lightWeWantToChange.intensity = 100f;
+        }
+
+        if(lightWeWantToChange.color == Color.blue)
+        {
+            lightWeWantToChange.gameObject.SetActive(false);
+
+        }
+
+        if (lightWeWantToChange.color == Color.green || lightWeWantToChange.color == Color.red)
+        {
+            //if the color is green or red it will run the code
+        }
+
+        if (lightWeWantToChange.color == Color.blue &&lightWeWantToChange.intensity > 50f)
+        {
+            // if the color is blue AND intenstity is greater than 50 the code will run
+        }
+
+        if (lightWeWantToChange.color == Color.white || (lightWeWantToChange.color == Color.black && lightWeWantToChange. intensity <= 25))
+        {
+            // if the color is white or the light is black and has an intensity less than or euqal to 25 the code will run
+
+        }
+          
+
+
+    }    
+
     
 
 
