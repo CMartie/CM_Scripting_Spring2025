@@ -6,6 +6,8 @@ public class PlayFlashClip : MonoBehaviour
   //this script shows the white screen while "taking photo"
 
     public GameObject whiteScreen;
+    public AudioQueue cameraNoise;
+
 
 
 
@@ -23,6 +25,8 @@ public class PlayFlashClip : MonoBehaviour
 
     public void playCameraShutter()
     {
+        cameraNoise.selectionNoise();
+
         whiteScreen.SetActive(true);
 
     }

@@ -6,6 +6,8 @@ public class AudioQueue : MonoBehaviour
 
     public AudioSource selectAudio;
     public AudioSource playAudio;
+    public AudioSource cameraNoise;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,5 +32,11 @@ public class AudioQueue : MonoBehaviour
     public void heavyPlayNoise()
     {
         playAudio.Play();
+    }
+
+    public void camerShutterNoise()
+    {
+        playAudio.Play();
+
     }
 }
