@@ -27,4 +27,29 @@ public class CannonBall : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.gameObject.name);
+
+        if (other.gameObject.tag == "upForce")
+        {
+            this.gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
+            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 1500f);
+
+        }
+        else if (other.gameObject.tag == "downForce")
+        {
+            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.down * 1500f);
+
+        }
+        
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+
+    }
 }

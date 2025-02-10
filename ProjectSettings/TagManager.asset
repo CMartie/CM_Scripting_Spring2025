@@ -8,6 +8,9 @@ TagManager:
   - NotCoolGuy
   - OKGuy
   - cannonBall
+  - floor
+  - upForce
+  - downForce
   layers:
   - Default
   - TransparentFX
