@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayScreenSelection : MonoBehaviour
 {
+    //this script is the play selection screen
+
     public GameObject PlayScreen;
 
     public GameObject PlayScreen2;
@@ -61,12 +63,7 @@ public class PlayScreenSelection : MonoBehaviour
 
 
         }
-       // if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            //Destroy(BlackScreen);
-
-
-        }
+       
 
     }
 

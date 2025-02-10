@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ShowGallery : MonoBehaviour
 {
+    //this script is the button that shows the gallery view
     public GameObject galleryBG;
 
     

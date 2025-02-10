@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AudioQueue : MonoBehaviour
 {
+    //this script plays the audio while moving or selecting
+
     public AudioSource selectAudio;
     public AudioSource playAudio;
 

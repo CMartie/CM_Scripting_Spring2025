@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class CameraHUDOptions : MonoBehaviour
 {
-    public GameObject CameraHUD;
+   // public GameObject CameraHUD;
 
     public GameObject CameraBG;
 
-    public GameObject ZoomSlider;
+   // public GameObject ZoomSlider;
 
-    public PlayScreenSelection Continue;
+   // public PlayScreenSelection Continue;
 
     public Vector3 BGscale;
 

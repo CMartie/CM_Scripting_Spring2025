@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BackArrow : MonoBehaviour
 {
+    //this script is the back arrow that exits out of gallery view
+
     public GameObject GalleryBG;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

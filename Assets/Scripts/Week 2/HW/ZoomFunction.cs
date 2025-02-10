@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ZoomFunction : MonoBehaviour
 {
+    //this script is the zooming function during the camera HUD
+
     public GameObject CameraBG;
 
     public GameObject ZoomSlider;

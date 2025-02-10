@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayFlashClip : MonoBehaviour
 {
-   // public VideoPlayer flashVideo;
-   // public ShowGallery showVideo;
+  //this script shows the white screen while "taking photo"
+
     public GameObject whiteScreen;
 
 

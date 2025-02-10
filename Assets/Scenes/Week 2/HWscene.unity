@@ -1196,6 +1196,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828031227}
   m_CullTransparentMesh: 1
+--- !u!1 &835280020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 835280022}
+  - component: {fileID: 835280021}
+  m_Layer: 0
+  m_Name: Backarrowscript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &835280021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835280020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb27dc76f3146e4e9ab0aeb07d90b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GalleryBG: {fileID: 227089649}
+--- !u!4 &835280022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835280020}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 547.428, y: 199.7256, z: 15.504788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850167869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,7 +1470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &916172507
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1435,7 +1480,7 @@ RectTransform:
   m_GameObject: {fileID: 916172506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.720604, y: 1.192578, z: 1.4101}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1172735459}
@@ -1443,7 +1488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -879, y: 423}
+  m_AnchoredPosition: {x: -796, y: 418}
   m_SizeDelta: {x: 160, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916172508
@@ -1489,7 +1534,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 916172509}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 835280021}
+        m_TargetAssemblyTypeName: BackArrow, Assembly-CSharp
+        m_MethodName: leaveGallery
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &916172509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3022,7 +3079,6 @@ GameObject:
   - component: {fileID: 2132112482}
   - component: {fileID: 2132112481}
   - component: {fileID: 2132112483}
-  - component: {fileID: 2132112484}
   m_Layer: 0
   m_Name: GalleryOptions
   m_TagString: Untagged
@@ -3072,19 +3128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   largeZoom: {fileID: 0}
   pictureTaken: {fileID: 743011107}
---- !u!114 &2132112484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132112480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cb27dc76f3146e4e9ab0aeb07d90b2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GalleryBG: {fileID: 227089649}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3103,3 +3146,4 @@ SceneRoots:
   - {fileID: 1582486884}
   - {fileID: 16282701}
   - {fileID: 1186445598}
+  - {fileID: 835280022}
