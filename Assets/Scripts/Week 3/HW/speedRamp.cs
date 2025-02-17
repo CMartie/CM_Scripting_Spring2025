@@ -13,4 +13,12 @@ public class speedRamp : MonoBehaviour
     {
         
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "speedBump")
+        {
+            this.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.right * 500f);
+
+        }
+    }
 }
