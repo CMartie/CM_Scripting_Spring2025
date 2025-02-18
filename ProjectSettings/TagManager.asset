@@ -11,6 +11,10 @@ TagManager:
   - floor
   - upForce
   - downForce
+  - speedBump
+  - smallBoost
+  - button
+  - spring1
   layers:
   - Default
   - TransparentFX
