@@ -27,5 +27,17 @@ public class buttonCollision : MonoBehaviour
            
            GameObject go = Instantiate(runningball1, runningBallSpawnPoint.transform.position, Quaternion.identity);
         }
+
+        if(otherObject.gameObject.tag == "platform")
+        {
+            this.gameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
+            runningball1.GetComponent<Rigidbody>().AddForce(Vector3.up * 500f + Vector3.right * 500f);
+
+        }
+
+        if(otherObject.gameObject.tag == "TheKiller")
+        {
+            Destroy(runningball1);
+        }
     }
 }
