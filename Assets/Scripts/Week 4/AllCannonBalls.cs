@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class AllCannonBalls : MonoBehaviour
+public class ListTest : MonoBehaviour
 {
   //public CannonBall cannonBall;
 
