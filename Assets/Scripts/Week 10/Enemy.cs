@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public float attackRange;
     public float attackSpeed;
 
-    public float attackTimer;
+    private float attackTimer;
 
     protected Player player;
 
@@ -43,6 +43,8 @@ public class Enemy : MonoBehaviour
             if(attackTimer > attackSpeed)
             {
                 Attack();
+                attackTimer = 0;
+
             }
         }
     }
