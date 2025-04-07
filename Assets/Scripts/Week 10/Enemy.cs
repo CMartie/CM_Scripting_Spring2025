@@ -126,6 +126,10 @@ public class Enemy : MonoBehaviour
                     }
                    
                 }
+               // else
+               // {
+               //     navAgent.isStopped = false;
+               // }
             }
 
 

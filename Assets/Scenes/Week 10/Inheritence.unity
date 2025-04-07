@@ -1331,7 +1331,7 @@ MonoBehaviour:
   - {fileID: 1423348079}
   - {fileID: 1096752551}
   - {fileID: 1959236855}
-  aggroRange: 30
+  aggroRange: 15
 --- !u!1 &1096752550
 GameObject:
   m_ObjectHideFlags: 0
