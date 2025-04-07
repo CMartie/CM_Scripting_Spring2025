@@ -11,6 +11,7 @@ public class RangedEnemy : Enemy
         GameObject go = Instantiate(projectilePrefab, projectileSpawnPosition.position, projectileSpawnPosition.rotation);
 
         go.GetComponent<Rigidbody>().AddForce(go.transform.forward * projectileForce);
+
     }
 
     protected override void Update()
