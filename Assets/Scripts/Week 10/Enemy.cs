@@ -23,9 +23,12 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
 
-    protected List<Transform> patrolPoints = new List<Transform> ();
+    protected List<Transform> patrolPoints = new List<Transform>();
 
     protected int patrolPointIndex = 0;
+
+    [SerializeField]
+    protected float aggroRange = 15f;
 
     protected virtual void Start()
     {
@@ -55,36 +58,50 @@ public class Enemy : MonoBehaviour
     {
         //navAgent.SetDestination(player.transform.position);
 
-        if(hasSeenPlayer == true)
+        if (hasSeenPlayer == true)
         {
-            if (Vector3.Distance(this.transform.position, player.transform.position) < attackRange)
+            if (navAgent.remainingDistance < 0.5f) //enemy reached last known location of the player
             {
-
-
-                attackTimer += Time.deltaTime;
-
-                if (attackTimer > attackSpeed)
+                if (Vector3.Distance(this.transform.position, this.transform.position) > aggroRange) //
                 {
-                    Attack();
-                    attackTimer = 0;
-
+                    hasSeenPlayer = false;
                 }
             }
-
+            else //they are not out of aggro range
+            {
+                if(isPlayerInLineOfSight()== true) // if player is within line of sight
+                {
+                    navAgent.SetDestination(player.transform.position);
+                    navAgent.isStopped = false; //enemy will see player and will chase them
+                }
+            }
+            //if the player is within attack range 
             if (Vector3.Distance(this.transform.position, player.transform.position) > attackRange)
             {
-                navAgent.SetDestination(player.transform.position);
-                navAgent.isStopped = false;
-
-            }
-            else
-            {
-                RaycastHit hit;
+                RaycastHit hit; // and if the player is within line of sight
 
                 Vector3 dir = player.transform.position - this.transform.position;
                 dir.Normalize();
 
-                //Debug.Log(hit.collider.name);
+
+                if (Physics.Raycast(this.transform.position, dir, out hit))
+                {
+                    if (hit.collider.tag == "Player")
+                    {
+                        navAgent.SetDestination(player.transform.position);
+                        navAgent.isStopped = false;
+                    }
+
+                }
+
+            }
+            else //if the player is within attack range
+            {
+                RaycastHit hit; //and in line of sight
+
+                Vector3 dir = player.transform.position - this.transform.position;
+                dir.Normalize();
+
 
                 if (Physics.Raycast(this.transform.position, dir, out hit))
                 {
@@ -92,46 +109,40 @@ public class Enemy : MonoBehaviour
 
                     if (hit.collider.tag == "Player")
                     {
-                        navAgent.isStopped = true;
-                        this.transform.LookAt(player.transform.position);
-
-                        // if (Vector3.Distance(this.transform.position, player.transform.position) < attackRange)
-                        //{
+                        navAgent.isStopped = true; //stop nav movements
+                        this.transform.LookAt(player.transform.position); //look at player
 
 
-                        attackTimer += Time.deltaTime;
 
-                        if (attackTimer > attackSpeed)
+                        attackTimer += Time.deltaTime; //increase attack timer
+
+                        if (attackTimer > attackSpeed) //once attack timer reaches the attack speed
                         {
-                            Attack();
-                            attackTimer = 0;
+                            Attack(); //attack!
+                            attackTimer = 0; //reset timer
 
-                            //}
+                            
                         }
                     }
-                    else
-                    {
-                        navAgent.SetDestination(player.transform.position);
-                        navAgent.isStopped = false;
-                    }
+                   
                 }
             }
-       
+
 
         }
-        else
+        else //if the player has not been seen
         {
-            if(navAgent.remainingDistance < 0.5f)
+            if (navAgent.remainingDistance < 0.5f) // of tje navagent reacjes ots destination
             {
-                patrolPointIndex++;
+                patrolPointIndex++; //increase the patrol point indec=x so it will move
 
-                if(patrolPointIndex < patrolPoints.Count)
+                if (patrolPointIndex >= patrolPoints.Count) //if the point is out of range
                 {
-                    patrolPointIndex = 0;
+                    patrolPointIndex = 0; //reset to 0
                 }
 
-                navAgent.SetDestination(patrolPoints[patrolPointIndex].position);
-
+                navAgent.SetDestination(patrolPoints[patrolPointIndex].position); //set destination to determined point
+                navAgent.isStopped = false;
             }
         }
 
@@ -140,7 +151,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             hasSeenPlayer = true;
         }
@@ -150,13 +161,13 @@ public class Enemy : MonoBehaviour
     {
         RaycastHit hit;
 
-        Vector3 dir = player.transform .position - this.transform.position;
+        Vector3 dir = player.transform.position - this.transform.position;
 
         dir.Normalize();
 
-        if(Physics.Raycast(this.transform.position , dir, out hit))
+        if (Physics.Raycast(this.transform.position, dir, out hit))
         {
-            if(hit.collider.tag == "Player")
+            if (hit.collider.tag == "Player")
             {
                 hasSeenPlayer = true;
             }
@@ -165,11 +176,27 @@ public class Enemy : MonoBehaviour
         {
             hasSeenPlayer = false;
         }
-       
+
     }
 
+    protected bool isPlayerInLineOfSight()
+    {
+        RaycastHit hit;
+
+        Vector3 dir = player.transform.position - this.transform.position;
+        dir.Normalize();
 
 
-   
-    
+        if (Physics.Raycast(this.transform.position, dir, out hit))
+        {
+
+            if (hit.collider.tag == "Player")
+            {
+                return true;
+            }
+
+        }
+
+        return false;
+    }
 }

@@ -1185,7 +1185,12 @@ MonoBehaviour:
   attackDamage: 5
   attackRange: 10
   attackSpeed: 2.5
-  patrolPoints: []
+  patrolPoints:
+  - {fileID: 1867676571}
+  - {fileID: 1423348079}
+  - {fileID: 1096752551}
+  - {fileID: 1959236855}
+  aggroRange: 15
   projectilePrefab: {fileID: 4941627028017931917, guid: 43e128508d647804c930565bf5461ce6, type: 3}
   projectileSpawnPosition: {fileID: 2101700226}
   projectileForce: 500
@@ -1321,7 +1326,12 @@ MonoBehaviour:
   attackDamage: 20
   attackRange: 3
   attackSpeed: 2.5
-  patrolPoints: []
+  patrolPoints:
+  - {fileID: 1867676571}
+  - {fileID: 1423348079}
+  - {fileID: 1096752551}
+  - {fileID: 1959236855}
+  aggroRange: 30
 --- !u!1 &1096752550
 GameObject:
   m_ObjectHideFlags: 0
