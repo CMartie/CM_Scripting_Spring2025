@@ -17,6 +17,7 @@ TagManager:
   - spring1
   - platform
   - TheKiller
+  - Vision Cone
   layers:
   - Default
   - TransparentFX

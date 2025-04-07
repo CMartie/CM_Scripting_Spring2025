@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine. AI;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 
 
@@ -20,12 +21,17 @@ public class Enemy : MonoBehaviour
 
     protected bool hasSeenPlayer = false;
 
+    [SerializeField]
+
+    protected List<Transform> patrolPoints = new List<Transform> ();
+
+    protected int patrolPointIndex = 0;
 
     protected virtual void Start()
     {
         player = FindAnyObjectByType<Player>();
         navAgent = GetComponent<NavMeshAgent>();
-        //navAgent.SetDestination(player.transform.position);
+        navAgent.SetDestination(patrolPoints[patrolPointIndex].position);
     }
 
     protected virtual void Attack()
@@ -112,6 +118,21 @@ public class Enemy : MonoBehaviour
             }
        
 
+        }
+        else
+        {
+            if(navAgent.remainingDistance < 0.5f)
+            {
+                patrolPointIndex++;
+
+                if(patrolPointIndex < patrolPoints.Count)
+                {
+                    patrolPointIndex = 0;
+                }
+
+                navAgent.SetDestination(patrolPoints[patrolPointIndex].position);
+
+            }
         }
 
 
