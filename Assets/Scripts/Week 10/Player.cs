@@ -29,4 +29,12 @@ public class Player : MonoBehaviour
     {
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Vision Cone")
+        {
+            other.GetComponentInParent<Enemy>().SeePlayer();
+        }
+    }
 }
